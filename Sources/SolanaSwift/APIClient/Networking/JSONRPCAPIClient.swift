@@ -90,9 +90,9 @@ public class JSONRPCAPIClient: SolanaAPIClient {
         try await get(method: "getEpochInfo", params: [RequestConfiguration(commitment: commitment)])
     }
 
-    public func getFees(commitment: Commitment? = nil) async throws -> Fee {
-        let result: Rpc<Fee> = try await get(method: "getFeeForMessage", params: [RequestConfiguration(commitment: commitment)])
-        return result.value
+    public func getFees(commitment: Commitment? = nil) async throws -> Int {
+        let result = try await get(method: "getFeeForMessage", params: [RequestConfiguration(commitment: commitment)])
+        return result.value?.value
     }
 
     public func getMinimumBalanceForRentExemption(dataLength: UInt64,

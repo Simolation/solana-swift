@@ -119,7 +119,7 @@ public protocol SolanaAPIClient {
     /// up to limit blocks, inclusive
     /// - SeeAlso https://docs.solana.com/developing/clients/jsonrpc-api#getfees
     ///
-    func getFees(commitment: Commitment?) async throws -> Fee
+    func getFees(commitment: Commitment?) async throws -> Int
 
     /// Returns minimum balance required to make account rent exempt
     /// - Parameters:

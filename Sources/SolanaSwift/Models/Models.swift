@@ -104,6 +104,10 @@ public struct Fee: Decodable {
     public let lastValidSlot: UInt64?
 }
 
+public struct FeeMessage: Decodable {
+    public let value: UInt64?
+}
+
 public struct FeeCalculatorResponse: Decodable {
     public let lamportsPerSignature: Lamports
 }

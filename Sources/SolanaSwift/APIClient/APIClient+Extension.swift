@@ -32,7 +32,7 @@ public extension SolanaAPIClient {
 
     /// Get fee per signature
     func getLamportsPerSignature() async throws -> UInt64? {
-        try await getFees(commitment: nil).feeCalculator?.lamportsPerSignature
+        try await getFees(commitment: nil).value
     }
 
     /// Convenience method for request(method:params:) with no params

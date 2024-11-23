@@ -91,7 +91,7 @@ public class JSONRPCAPIClient: SolanaAPIClient {
     }
 
     public func getFees(commitment: Commitment? = nil) async throws -> Fee {
-        let result: Rpc<Fee> = try await get(method: "getFees", params: [RequestConfiguration(commitment: commitment)])
+        let result: Rpc<Fee> = try await get(method: "getFeeForMessage", params: [RequestConfiguration(commitment: commitment)])
         return result.value
     }
 
